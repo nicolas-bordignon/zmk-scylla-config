@@ -1,5 +1,5 @@
 /*
- * ZMK Scylla Ultimate V9 - Final Version
+ * ZMK Scylla Ultimate V9 - Final Version (Fixed Labels)
  * Features: Colemak-DH, Gaming Numbers, Android Studio Macros, Toggle Mirror
  * Repositório: Ajustado para Scylla V2 (Tupinikeebs/BastardKB)
  */
@@ -26,27 +26,106 @@
 / {
     macros {
         /* --- MACROS KOTLIN / ANDROID --- */
-        k_arr: kotlin_arrow { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE &kp MINUS &kp GT &kp SPACE>; };
-        k_elv: kotlin_elvis { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE &kp QMARK &kp COLON &kp SPACE>; };
-        k_tpl: kotlin_template { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp DLLR &kp LBRC &kp RBRC &kp LEFT>; };
-        k_log: android_log { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp P &kp R &kp I &kp V &kp A &kp T &kp E &kp SPACE &kp C &kp O &kp N &kp S &kp T &kp SPACE &kp V &kp A &kp L &kp SPACE &kp T &kp A &kp G>; };
+        k_arr: kotlin_arrow { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "K_ARROW";
+            bindings = <&kp SPACE &kp MINUS &kp GT &kp SPACE>; 
+        };
+        k_elv: kotlin_elvis { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "K_ELVIS";
+            bindings = <&kp SPACE &kp QMARK &kp COLON &kp SPACE>; 
+        };
+        k_tpl: kotlin_template { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "K_TEMPLATE";
+            bindings = <&kp DLLR &kp LBRC &kp RBRC &kp LEFT>; 
+        };
+        k_log: android_log { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "K_LOG";
+            bindings = <&kp P &kp R &kp I &kp V &kp A &kp T &kp E &kp SPACE &kp C &kp O &kp N &kp S &kp T &kp SPACE &kp V &kp A &kp L &kp SPACE &kp T &kp A &kp G>; 
+        };
 
         /* --- ACTION ROW MACROS (LINHA SUPERIOR) --- */
-        /* Esquerda: Edição */
-        m_ren: rename { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(F6)>; };
-        m_undo: undo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(Z)>; };
-        m_redo: redo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(Z))>; };
-        m_opt: optimize_imports { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LA(O))>; };
-        m_copy: copy { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(C)>; };
-        m_pst: paste { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(V)>; };
+        m_ren: rename { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "RENAME";
+            bindings = <&kp LS(F6)>; 
+        };
+        m_undo: undo { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "UNDO";
+            bindings = <&kp LC(Z)>; 
+        };
+        m_redo: redo { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "REDO";
+            bindings = <&kp LC(LS(Z))>; 
+        };
+        m_opt: optimize_imports { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "OPTIMIZE";
+            bindings = <&kp LC(LA(O))>; 
+        };
+        m_copy: copy { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "COPY";
+            bindings = <&kp LC(C)>; 
+        };
+        m_pst: paste { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "PASTE";
+            bindings = <&kp LC(V)>; 
+        };
         
         /* Direita: Navegação e IDE */
-        m_search: search_everywhere { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LSHFT &kp LSHFT>; }; 
-        m_usage: find_usages { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LA(F7)>; };
-        m_f_all: find_in_files { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(F))>; };
-        m_fix: quick_fix { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LA(RET)>; };
-        m_fmt: reformat_code { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LA(L))>; };
-        m_shot: screenshot { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LG(LS(S))>; };
+        m_search: search_everywhere { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "SEARCH";
+            bindings = <&kp LSHFT &kp LSHFT>; 
+        }; 
+        m_usage: find_usages { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "FIND_USAGES";
+            bindings = <&kp LA(F7)>; 
+        };
+        m_f_all: find_in_files { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "FIND_ALL";
+            bindings = <&kp LC(LS(F))>; 
+        };
+        m_fix: quick_fix { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "QUICK_FIX";
+            bindings = <&kp LA(RET)>; 
+        };
+        m_fmt: reformat_code { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "REFORMAT";
+            bindings = <&kp LC(LA(L))>; 
+        };
+        m_shot: screenshot { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>; 
+            label = "SCREENSHOT";
+            bindings = <&kp LG(LS(S))>; 
+        };
     };
 
     behaviors {
