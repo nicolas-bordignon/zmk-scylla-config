@@ -197,7 +197,7 @@
         default_layer {
             bindings = <
 &m_ren        &m_undo      &m_redo     &m_opt      &m_copy      &m_pst             &m_search  &m_usage      &m_f_all      &m_fix      &m_fmt       &m_shot
-&bt BT_SEL 0  &kp Q        &kp W       &kp E       &kp P        &kp B              &kp J      &kp L         &kp U         &kp Y       &kp SEMI     &bt BT_SEL 3
+&bt BT_SEL 0  &kp Q        &kp W       &kp F       &kp P        &kp B              &kp J      &kp L         &kp U         &kp Y       &kp SEMI     &bt BT_SEL 3
 &bt BT_SEL 1  &hm LCTRL A  &hm LALT R  &hm LGUI S  &hm LSHFT T  &kp G              &kp M      &hm RSHFT N   &hm RGUI E    &hm RALT I  &hm RCTRL O  &kp C_VOL_UP
 &bt BT_SEL 2  &kp Z        &kp X       &kp C       &kp D        &kp V              &kp K      &kp H         &kp COMMA     &kp DOT     &kp FSLH     &kp C_VOL_DN
                                        &kp ESC     &lt SYM TAB  &mt LSHFT SPACE    &kp DEL    &lt NUM BSPC  &mt RALT RET
