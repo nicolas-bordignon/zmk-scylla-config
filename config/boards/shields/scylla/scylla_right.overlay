@@ -1,7 +1,5 @@
 /*
- * Copyright (c) 2020 ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
+ * Scylla Right Side - Handwired Pinout (Visual Confirmado)
  */
 
 #include "scylla.dtsi"
@@ -12,11 +10,19 @@
 
 &kscan0 {
     col-gpios
-        = <&pro_micro_a 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro_a 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH> // Col 0 (F4)
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // Col 1 (F5)
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // Col 2 (F6)
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // Col 3 (F7)
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // Col 4 (B1)
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // Col 5 (B3)
+        ;
+        
+    row-gpios
+        = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 0 (D4)
+        , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 1 (C6)
+        , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 2 (D7)
+        , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 3 (E6)
+        , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 4 (B4)
         ;
 };
