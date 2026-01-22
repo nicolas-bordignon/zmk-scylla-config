@@ -1,6 +1,6 @@
 /*
- * ZMK Scylla Ultimate V9.2 - Syntax Fix
- * ATENÇÃO: Copie este arquivo até o final para não faltar chaves "};"
+ * ZMK Scylla Ultimate V9.3 - Final Fix
+ * Certifique-se de copiar até a última chave };
  */
 
 #include <behaviors.dtsi>
@@ -16,7 +16,7 @@
 #define NAV 5
 #define GFN 6
 
-/* Comportamentos Globais */
+/* --- Comportamentos Globais (Fora do Root) --- */
 &mt {
     tapping-term-ms = <200>;
     flavor = "tap-preferred";
@@ -36,7 +36,7 @@
     release-after-ms = <2000>;
 };
 
-/* Início do Root Node */
+/* --- INÍCIO DO ROOT NODE (Atenção aqui) --- */
 / {
     macros {
         /* Macros Kotlin/Android */
@@ -277,4 +277,5 @@
             >;
         };
     };
-};
+}; 
+/* FIM DO ARQUIVO - Certifique-se que esta chave acima existe */
