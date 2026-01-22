@@ -1,5 +1,6 @@
 /*
- * ZMK Scylla Ultimate V9.1 - Build Fix (Labels Added)
+ * ZMK Scylla Ultimate V9.2 - Syntax Fix
+ * ATENÇÃO: Copie este arquivo até o final para não faltar chaves "};"
  */
 
 #include <behaviors.dtsi>
@@ -15,11 +16,27 @@
 #define NAV 5
 #define GFN 6
 
-&mt { tapping-term-ms = <200>; flavor = "tap-preferred"; };
-&lt { tapping-term-ms = <200>; flavor = "balanced"; };
-&sk { release-after-ms = <2000>; quick-release; };
-&sl { release-after-ms = <2000>; };
+/* Comportamentos Globais */
+&mt {
+    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
+};
 
+&lt {
+    tapping-term-ms = <200>;
+    flavor = "balanced";
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&sl {
+    release-after-ms = <2000>;
+};
+
+/* Início do Root Node */
 / {
     macros {
         /* Macros Kotlin/Android */
@@ -142,15 +159,35 @@
         timeout-ms = <50>;
 
         /* MÃO DIREITA */
-        combo_num_right { timeout-ms = <50>; key-positions = <15 16>; bindings = <&sl NUM>; };
-        combo_sym_right { timeout-ms = <50>; key-positions = <16 17>; bindings = <&sl SYM>; };
+        combo_num_right {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&sl NUM>;
+        };
+        combo_sym_right {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&sl SYM>;
+        };
 
         /* MÃO ESQUERDA */
-        combo_select_all { timeout-ms = <50>; key-positions = <10 11>; bindings = <&kp LC(A)>; };
-        combo_sym_left { timeout-ms = <50>; key-positions = <11 12>; bindings = <&sl SYM>; };
+        combo_select_all {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp LC(A)>;
+        };
+        combo_sym_left {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&sl SYM>;
+        };
         
         /* SISTEMA */
-        combo_bt_clr { timeout-ms = <50>; key-positions = <0 11>; bindings = <&bt BT_CLR>; };
+        combo_bt_clr {
+            timeout-ms = <50>;
+            key-positions = <0 11>;
+            bindings = <&bt BT_CLR>;
+        };
     };
 
     keymap {
