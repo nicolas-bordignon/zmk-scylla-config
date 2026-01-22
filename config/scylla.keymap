@@ -1,7 +1,4 @@
-/*
- * ZMK Scylla Ultimate V9.3 - Final Fix
- * Certifique-se de copiar até a última chave };
- */
+/* ZMK Scylla Ultimate V9.4 - Syntax & Node Name Fix */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -16,7 +13,6 @@
 #define NAV 5
 #define GFN 6
 
-/* --- Comportamentos Globais (Fora do Root) --- */
 &mt {
     tapping-term-ms = <200>;
     flavor = "tap-preferred";
@@ -36,36 +32,33 @@
     release-after-ms = <2000>;
 };
 
-/* --- INÍCIO DO ROOT NODE (Atenção aqui) --- */
 / {
     macros {
-        /* Macros Kotlin/Android */
-        k_arr: kotlin_arrow {
+        k_arr: kotlin-arrow {
             label = "KOTLIN_ARROW";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp SPACE &kp MINUS &kp GT &kp SPACE>;
         };
-        k_elv: kotlin_elvis {
+        k_elv: kotlin-elvis {
             label = "KOTLIN_ELVIS";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp SPACE &kp QMARK &kp COLON &kp SPACE>;
         };
-        k_tpl: kotlin_template {
+        k_tpl: kotlin-template {
             label = "KOTLIN_TEMPLATE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp DLLR &kp LBRC &kp RBRC &kp LEFT>;
         };
-        k_log: android_log {
+        k_log: android-log {
             label = "ANDROID_LOG";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp P &kp R &kp I &kp V &kp A &kp T &kp E &kp SPACE &kp C &kp O &kp N &kp S &kp T &kp SPACE &kp V &kp A &kp L &kp SPACE &kp T &kp A &kp G>;
         };
 
-        /* ACTION ROW MACROS */
         m_ren: rename {
             label = "RENAME";
             compatible = "zmk,behavior-macro";
@@ -84,7 +77,7 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LS(Z))>;
         };
-        m_opt: optimize_imports {
+        m_opt: optimize-imports {
             label = "OPTIMIZE_IMPORTS";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -103,32 +96,31 @@
             bindings = <&kp LC(V)>;
         };
         
-        /* Direita: Navegação e IDE */
-        m_search: search_everywhere {
+        m_search: search-everywhere {
             label = "SEARCH_EVERYWHERE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LSHFT &kp LSHFT>;
         }; 
-        m_usage: find_usages {
+        m_usage: find-usages {
             label = "FIND_USAGES";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(F7)>;
         };
-        m_f_all: find_in_files {
+        m_f_all: find-in-files {
             label = "FIND_IN_FILES";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(F))>;
         };
-        m_fix: quick_fix {
+        m_fix: quick-fix {
             label = "QUICK_FIX";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(RET)>;
         };
-        m_fmt: reformat_code {
+        m_fmt: reformat-code {
             label = "REFORMAT_CODE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -143,7 +135,7 @@
     };
 
     behaviors {
-        hm: homerow_mods {
+        hm: homerow-mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
@@ -158,32 +150,29 @@
         compatible = "zmk,combos";
         timeout-ms = <50>;
 
-        /* MÃO DIREITA */
-        combo_num_right {
+        combo-num-right {
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&sl NUM>;
         };
-        combo_sym_right {
+        combo-sym-right {
             timeout-ms = <50>;
             key-positions = <16 17>;
             bindings = <&sl SYM>;
         };
 
-        /* MÃO ESQUERDA */
-        combo_select_all {
+        combo-select-all {
             timeout-ms = <50>;
             key-positions = <10 11>;
             bindings = <&kp LC(A)>;
         };
-        combo_sym_left {
+        combo-sym-left {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&sl SYM>;
         };
         
-        /* SISTEMA */
-        combo_bt_clr {
+        combo-bt-clr {
             timeout-ms = <50>;
             key-positions = <0 11>;
             bindings = <&bt BT_CLR>;
@@ -193,7 +182,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* LAYER 0: BASE */
         default_layer {
             bindings = <
 &m_ren        &m_undo      &m_redo      &m_opt       &m_copy      &m_pst            &m_search    &m_usage     &m_f_all     &m_fix       &m_fmt       &m_shot
@@ -205,7 +193,6 @@
             >;
         };
 
-        /* LAYER 1: GAMING */
         gaming_layer {
             bindings = <
 &kp N1        &kp N2       &kp N3       &kp N4       &kp N5       &kp N6            &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS    &kp EQUAL
@@ -217,7 +204,6 @@
             >;
         };
 
-        /* LAYER 2: MIRROR */
         mirror_layer {
             bindings = <
 &trans    &trans       &trans       &trans       &trans       &trans            &trans       &trans       &trans       &trans       &trans       &trans
@@ -229,7 +215,6 @@
             >;
         };
 
-        /* LAYER 3: NUM */
         num_layer {
             bindings = <
 &trans        &trans       &trans       &trans       &trans       &trans            &trans       &trans       &trans       &trans       &trans       &trans
@@ -241,7 +226,6 @@
             >;
         };
 
-        /* LAYER 4: SYM */
         sym_layer {
             bindings = <
 &trans        &trans       &trans       &trans       &trans       &trans            &trans       &trans       &trans       &trans       &trans       &trans
@@ -253,7 +237,6 @@
             >;
         };
 
-        /* LAYER 5: NAV */
         nav_layer {
             bindings = <
 &trans        &trans       &trans       &trans       &trans       &trans            &trans       &trans       &trans       &trans       &trans       &trans
@@ -265,7 +248,6 @@
             >;
         };
 
-        /* LAYER 6: GAMING FN */
         gaming_fn_layer {
             bindings = <
 &kp F1        &kp F2       &kp F3       &kp F4       &kp F5       &kp F6            &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
@@ -277,5 +259,5 @@
             >;
         };
     };
-}; 
-/* FIM DO ARQUIVO - Certifique-se que esta chave acima existe */
+};
+/* EOF */
