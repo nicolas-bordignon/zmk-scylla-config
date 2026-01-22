@@ -1,17 +1,17 @@
 /*
- * Scylla Left Side - BastardKB Standard Pinout
+ * Scylla Left Side - Handwired Pinout (Visual Confirmado)
  */
 
 #include "scylla.dtsi"
 
 &kscan0 {
     col-gpios
-        = <&pro_micro 19 GPIO_ACTIVE_HIGH> // Col 0 (F4)
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // Col 1 (F5)
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // Col 2 (B1)
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // Col 3 (B3)
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH> // Col 4 (B2)
-        , <&pro_micro 10 GPIO_ACTIVE_HIGH> // Col 5 (B6)
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH> // Col 0 (F4)
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // Col 1 (F5)
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // Col 2 (F6)
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // Col 3 (F7)
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // Col 4 (B1)
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // Col 5 (B3)
         ;
         
     row-gpios
